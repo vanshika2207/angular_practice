@@ -1,0 +1,67 @@
+<h1>The template driven Form</h1>
+<br>
+<br>
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <div ngModelGroup="user" #user="ngModelGroup">
+    <label for="name">Name</label>
+    <input type="text" ngModel name="name" required minlength="5"
+      pattern="^[a-zA-Z\s]*$"
+      #name="ngModel">
+    <div *ngIf="name.invalid && name.touched">
+      <p *ngIf="name.errors.required">Name is requires</p>
+      <p *ngIf="name.errors.minlength">Name should be greater than 5 digits</p>
+      <p *ngIf="name.errors.pattern">Name should only conatins alphabets</p>
+    </div>
+    <br>
+    <label for="age">Age</label>
+    <input type="number" [ngModel]="22" name="age" required pattern="^\d{2}$"
+      min=20
+      max=60 #age="ngModel">
+    <div *ngIf="age.invalid && (age.touched||age.dirty)">
+      <p *ngIf="age.errors.required">Age is required</p>
+      <p *ngIf="age.errors.min || age.errors.max">Age should be between 20 and
+        60</p>
+      <p *ngIf="age.errors.pattern">Invalid age pattern</p>
+    </div></div>
+  <div *ngIf="user.invalid &&user.touched">Invalid!!</div>
+
+  <br>
+  <label for="email">Email</label>
+  <input type="email" ngModel name="email" required email #email="ngModel">
+  <div *ngIf="email.invalid && email.touched">
+    <p *ngIf="email.errors.required">Email is required</p>
+    <p *ngIf="email.errors.email">Invalid Email</p>
+  </div>
+  <br>
+  <select name="pets" [ngModel]="pets[0]">
+    <option *ngFor='let p of pets' [value]="p">{{p}}</option>
+  </select>
+  <br>
+  <label for="mobile">Mobile Number</label>
+  <input type="tel"
+    name="mobile"
+    ngModel
+    required
+    pattern="^(\+91[\s-]?|0)?[6-9]\d{9}$"
+    #mobile="ngModel">
+  <div *ngIf="mobile.invalid && (mobile.touched || mobile.dirty)">
+    <p *ngIf="mobile.errors.required">Mobile number is required</p>
+    <p *ngIf="mobile.errors.pattern">Mobile number is invalid</p>
+
+  </div>
+  <textarea name="message" [(ngModel)]="messagefrom"
+    #message="ngModel"></textarea>
+  <p>{{messagefrom}}</p>
+  <br>
+  <div *ngFor="let g of genders"><input type="radio" name="gender"
+      [value]="g" [ngModel]="genders[1]">{{g}}</div>
+
+  <div>
+    <label for="username">USERNAME</label>
+    <input type="text" name="username" ngModel>
+    <button type="button" (click)="suggest()">Suggest me a username</button>
+  </div>
+
+  <button [disabled]="!f.valid">Submit</button>
+</form>
+<p>{{nameP}}</p>

@@ -1,0 +1,28 @@
+<h1>Filter Products</h1>
+<form [formGroup]="productForm">
+  <label for="start">Product Starting Price</label>
+  <input matInput type="text" name="start" id="startPrice"
+    formControlName="startingPrice">
+  <hr>
+  <label for="end">Product Ending Price</label>
+  <input matInput type="text" name="end" id="endPrice"
+    formControlName="endingPrice">
+  <hr>
+  <input type="button" value="search" (click)="applyFilter()">
+
+</form>
+<h1>Product Details</h1>
+
+<!-- <div *ngIf="products |async as products">
+   -->
+<div *ngIf="products">
+  <p *ngIf="products.length==0">No Products available</p>
+  <mat-card *ngFor="let p of products">
+    <img [src]="p.productImage" class="product-img">
+    <p class="prductName">{{p.name}}</p>
+    <p class="category">Category :{{p.category}}</p>
+    <p class="price">Price : {{p.price}}</p>
+
+  </mat-card>
+
+</div>

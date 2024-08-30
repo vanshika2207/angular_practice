@@ -1,0 +1,105 @@
+
+<h3>String Interpolation</h3>
+
+<p>This is an example of string interpolation : {{first_name}} {{last_name|
+  uppercase}}
+</p>
+<hr>
+<h3>Property Binding</h3>
+<p>This is an example of property binding</p>
+<button [disabled]="!button">This button will get active in 5 sec</button>
+<hr>
+<h3>Event Binding</h3>
+
+<h4>First Case : (click)="increementCount()"</h4>
+<button (click)="increementCount()">Click this button to increement the
+  count</button>
+<p>{{count}}</p>
+
+<h4>Second Case :(click)="message('hello')"</h4>
+<button (click)="message('hello')">Click to view the secret message</button>
+<p>{{secretMessage}}</p>
+
+<h4>Third Case :(click)="NamePrint(input.value)" #using loacal reference</h4>
+<label for="name">Name </label>
+<input type="text" name="name" #input>
+<button (click)="NamePrint(input.value)">Click this button to view your
+  name</button>
+<p>{{yourName}}</p>
+<hr>
+<input type="text" #input2>
+<button (click)="onInput2(input2)">Click</button>
+<p>{{i}}</p>
+<hr>
+<h5>About event object</h5>
+<p (click)="paraclicked($event)">hello</p>
+
+<h4>Fourth Case:(input)=EventMessage($event)</h4>
+<label for="hobby">What is your hobby ?</label>
+<input type="text" (input)="EventMessage($event)">
+<p>{{hobby}}</p>
+<hr>
+
+<h3>Two-way-binding</h3>
+<label for="text">Write about your self</label>
+<textarea name="text" [(ngModel)]="textP"></textarea>
+<p>{{textP}}</p>
+<input type="text" [ngModel]="textB">
+
+<hr>
+<h3>Few other concepts</h3>
+
+<h4>Built in directives</h4>
+
+<h5>*ngIf=structural directive [*ngIf="randomNumber%2==0;else odd"]</h5>
+<label>Generate a random number</label>
+<button (click)="generateRandomNumber()">Gnerate</button>
+<p *ngIf="randomNumber%2==0;else odd">{{randomNumber}} is even</p>
+<ng-template #odd>
+  <p>{{randomNumber}} is odd</p>
+</ng-template>
+<h5>[ngStyle]=attribute directive
+  <code>[ngStyle]="{{ '{'}}backgroundColor:'yellow',color:'red'{{'}'}}"</code>
+</h5>
+<p
+  [ngStyle]="{backgroundColor:'yellow',color:'red',border:'1px solid blue'}">This
+  is an example of
+  [ngStyle]</p>
+<p
+  [ngStyle]="{backgroundColor:getColor(),color:'white',border:randomNumber%2==0?'1px solid green':'1 px solid pink'}">{{color}}
+  For the
+  number</p>
+<h5 [ngClass]="['classA','classB']">This is [ngClass]=attribute directive</h5>
+<p [ngClass]="{'classA':button==true,'classB':button==false}">Dynamic </p>
+<h5>Example of *ngFor</h5>
+<ul>
+  <li *ngFor="let f of food;let i=index">At index {{i}},we have {{f}}</li>
+</ul>
+<h5>Example for [ngSwitch]</h5>
+<div [ngSwitch]="val">
+  <p *ngSwitchCase="5">Value is 5</p>
+  <p *ngSwitchCase="6">Value is 6</p>
+  <!-- <p *ngSwitchDefault="7">Default value is 7</p> -->
+</div>
+<hr>
+<h5>Split two way binding , if we want to intercept the input before giving an
+  output</h5>
+<!-- [(ngModel)] equivalent -->
+<input type="text" [ngModel]="carname" (ngModelChange)="carname=$event">
+<p>{{carname}}</p>
+<!-- other way -->
+<input type="text" [ngModel]="carname" (ngModelChange)="aloud($event)">
+<p>{{carname}}</p>
+<h5>Getters and Setters -an alternative to split two way binding</h5>
+<label for="school">School Name</label>
+<input type="text" [(ngModel)]="schoolName">
+<p>My school is {{schoolName}}</p>
+<hr>
+<h5>View Child</h5>
+<p #text>This is text</p>
+
+<hr>
+<h2>Component Interaction</h2>
+<app-parent></app-parent>
+<h2>Custom Attribute directives</h2>
+<app-directive-component></app-directive-component>

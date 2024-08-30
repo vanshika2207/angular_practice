@@ -1,0 +1,90 @@
+<div class="login-form sign-up">
+  <h2>New Employee</h2>
+  <div class="form-card">
+    <form [formGroup]="myForm" (ngSubmit)="createForm()">
+      <div class="form-group-h-form-style">
+        <label>Name</label>
+        <input type="text" class="form-control" id="emp-name"
+          formControlName="Name">
+        <div id="name-error"
+          *ngIf="myForm.get('Name').invalid && (myForm.get('Name').touched || myForm.get('Name').dirty)">
+          <div *ngIf="myForm.get('Name').errors?.required">Name is
+            required!</div>
+          <div *ngIf="myForm.get('Name').errors?.minlength">Name must be at
+            least 4 chars long!</div>
+          <div *ngIf="myForm.get('Name').errors?.pattern">Name cannot have
+            numbers or special characters!</div>
+        </div>
+      </div>
+
+      <div class="form-group-h-form-style">
+        <label>Designation</label>
+        <select class="form-control" id="emp-desig"
+          formControlName="Designation">
+          <option *ngFor="let desig of desigList"
+            [value]="desig">{{desig}}</option>
+        </select>
+        <div id="des-error"
+          *ngIf="myForm.get('Designation').invalid && (myForm.get('Designation').touched || myForm.get('Designation').dirty)">
+          <div *ngIf="myForm.get('Designation').errors?.required">Designation is
+            required!</div>
+        </div>
+      </div>
+
+      <div class="form-group-h-form-style">
+        <label>Mobile Number</label>
+        <input type="text" class="form-control" id="emp-mobile"
+          formControlName="MobileNumber">
+        <div id="phone-error"
+          *ngIf="myForm.get('MobileNumber').invalid && (myForm.get('MobileNumber').touched || myForm.get('MobileNumber').dirty)">
+          <div *ngIf="myForm.get('MobileNumber').errors?.required">Mobile Number
+            is required!</div>
+          <div *ngIf="myForm.get('MobileNumber').errors?.pattern">Mobile Number
+            is invalid!</div>
+        </div>
+      </div>
+
+      <div class="form-group-h-form-style">
+        <label>Email</label>
+        <input type="text" class="form-control" id="emp-email"
+          formControlName="Email">
+        <div id="email-error"
+          *ngIf="myForm.get('Email').invalid && (myForm.get('Email').touched || myForm.get('Email').dirty)">
+          <div *ngIf="myForm.get('Email').errors?.required">Email ID is
+            required!</div>
+          <div *ngIf="myForm.get('Email').errors?.email">Email ID is
+            invalid!</div>
+        </div>
+      </div>
+
+      <div class="form-group-h-form-style">
+        <label>Age</label>
+        <input type="text" class="form-control" id="emp-age"
+          formControlName="Age">
+        <div id="age-error"
+          *ngIf="myForm.get('Age').invalid && (myForm.get('Age').touched || myForm.get('Age').dirty)">
+          <div *ngIf="myForm.get('Age').errors?.required">Age is required!</div>
+          <div *ngIf="myForm.get('Age').errors?.pattern">Invalid age
+            input!</div>
+          <div
+            *ngIf="myForm.get('Age').errors?.min || myForm.get('Age').errors?.max">Incorrect
+            age input! Accepted only integers of range 20-60!</div>
+        </div>
+      </div>
+
+      <div class="form-group-h-form-style">
+        <label>Date of joining</label>
+        <input type="date" class="form-control" id="emp-doj"
+          formControlName="DOJ">
+        <div id="doj-error"
+          *ngIf="myForm.get('DOJ').invalid && (myForm.get('DOJ').touched || myForm.get('DOJ').dirty)">
+          <div *ngIf="myForm.get('DOJ').errors?.required">DOJ is required!</div>
+        </div>
+      </div>
+      <div class="form-group-h-form-style">
+        <button id="addEmployee" [disabled]="!myForm.valid">ADD
+          EMPLOYEE</button>
+      </div>
+    </form>
+  </div>
+</div>

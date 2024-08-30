@@ -1,0 +1,20 @@
+<h2>Post Question</h2>
+<mat-icon>post_add</mat-icon>
+<br>
+<br>
+<form [formGroup]="myForm">
+  <label for="title">Title</label>
+  <input type="text" formControlName="title">
+  <div *ngIf="myForm.get('title').invalid && myForm.get('title').touched">
+    <control-messages [control]="myForm.get('title')"></control-messages>
+  </div>
+
+  <label for="description">Description</label>
+  <textarea formControlName="description"></textarea>
+  <div
+    *ngIf="myForm.get('description').invalid && myForm.get('description').touched">
+    <control-messages [control]="myForm.get('description')"></control-messages>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>

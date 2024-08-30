@@ -1,0 +1,16 @@
+<h2 class="title">Product World</h2>
+<div class="product-list">
+  <ul class="products">
+
+    <li class="product-list" *ngFor="let p of products;let i=index"
+      id="product{{i}}" (click)="onClick(i)"><img
+        class="badge" id="image[{i}]"
+        [src]=p.imageUrl
+        alt="{{p.name}}">{{p.name}}</li>
+
+  </ul>
+</div>
+<div class="product-detail">
+  <app-product
+    [productdesc]="products[index]"></app-product>
+</div>

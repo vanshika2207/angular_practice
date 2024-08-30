@@ -1,0 +1,24 @@
+<div id="success-msg" *ngIf="posted">
+  <p>Question Posted Successfully</p>
+</div>
+<div class="container">
+  <div class="header">
+    <h2>Post Question</h2>
+    <mat-icon aria-hidden="false" fontIcon="post_add">post_add</mat-icon>
+  </div>
+  <form [formGroup]="postForm" (ngSubmit)="savePost()">
+    <label for="title">Title</label><br />
+    <input id="title" formControlName="title" type="text" />
+    <div id="err-1">
+      <control-messages [control]="postForm.controls.title"></control-messages>
+    </div>
+    <label for="description">Description</label><br />
+    <textarea formControlName="description" rows="4" cols="50" id="description"
+      type="text"></textarea>
+    <div id="err-2">
+      <control-messages
+        [control]="postForm.controls.description"></control-messages>
+    </div>
+    <button type="submit" [disabled]="postForm.invalid">Post</button>
+  </form>
+</div>

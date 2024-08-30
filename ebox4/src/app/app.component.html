@@ -1,0 +1,9 @@
+
+<label for="name">Enter your name</label>
+<input type="text" [(ngModel)]="name">
+<label for="color">Choose background color</label>
+<input type="color" [(ngModel)]="color" value="color">
+<div [ngStyle]="{backgroundColor:color}">
+  <p>{{name}}</p>
+</div>
+<button (click)="reset()">Reset</button>

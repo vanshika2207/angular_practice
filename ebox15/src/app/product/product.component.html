@@ -1,0 +1,17 @@
+
+<h3 id="heading">Mobile Phones</h3>
+<div style="border: 1px solid #000000;max-width: 960px;margin: auto;"
+  *ngFor="let p of productList">
+
+  <span>
+    <img [src]="p.imageUrl" alt>
+    <h5>{{p.name}}</h5>
+    <p>{{p.rating}}</p>
+    <p>{{p.configuration}}</p>
+    <p>{{p.description}}</p>
+    <p>{{p.display}}</p>
+    <p>{{p.price}}</p>
+    <button>Book</button>
+  </span>
+
+</div>

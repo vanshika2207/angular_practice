@@ -1,0 +1,19 @@
+<h1>Shopping Cart</h1>
+<div>
+  <label for="item">Enter Item</label>
+  <input type="text" [(ngModel)]="userinput">
+  <button (click)="add()">Add Item</button>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">ITEMS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of item">
+        <td>{{i}}</td>
+        <td><button (click)="remove(i)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

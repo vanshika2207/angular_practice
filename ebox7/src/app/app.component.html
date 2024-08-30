@@ -1,0 +1,5 @@
+<h1>Check for pincode</h1>
+<div *ngIf='clicked' [ngStyle]="{color:check()?'green':'red'}">{{message}}</div>
+<label for="pincode">Pincode</label>
+<input type="text" name="pincode" [(ngModel)]="pin">
+<button (click)="check()">Check for delivery</button>

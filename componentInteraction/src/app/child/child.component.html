@@ -1,0 +1,21 @@
+<h3>This is a child component</h3>
+<p>A list of products</p>
+
+<div *ngFor="let product of productList">
+  <p>{{ product.name }}: ${{ product.cost }}</p>
+</div>
+
+<div *ngFor="let a of animalList">
+  <p>{{a.size}}</p>
+  <p>{{a.name}}</p>
+</div>
+
+<button (click)="greetChild('good morning')">Click </button>
+<hr>
+<p>greet with name</p>
+<button (click)="goodMorning()">goodMorning</button>
+<button (click)="sendMessage()">Send Message</button>
+<button (click)="clickedchild()">Click the child button</button>
+<hr>
+<button (click)="animalC()">click to know the animal</button>
+<button (click)="demoOutput()">demo for component interaction</button>

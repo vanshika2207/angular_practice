@@ -1,0 +1,28 @@
+<!-- <h2 id="title">Product Card</h2>
+<div class="card" *ngFor="let p of products">
+  <img id="prod-img" [src]="p.imageUrl" alt={{p.name}} height="100px"
+    width="100px">
+  <h2 class="name">{{p.name}}</h2>
+  <p class="category">{{p.category}}</p>
+  <p class="price">{{p.price}}</p>
+  <p class="stock">{{p.availQuantity}}</p>
+  <button *ngIf="p.availQuantity!==0"
+    [ngClass]="{'in-stock':p.availQuantity!==0}">Add to Cart</button>
+  <button *ngIf="p.availQuantity==0"
+    [ngClass]="{'out-stock':p.availQuantity==0}">Out of Stock</button>
+</div> -->
+
+<h2 id='title'>Product Card</h2>
+
+<div class='card' *ngFor="let p of products">
+  <img id='prod-img' [src]=p.imageUrl>
+  <h2 class='name'>{{p.name}}</h2>
+  <p class='category'>Category: {{p.category}}</p>
+  <p class='price'>Price: ${{p.price}}</p>
+  <p class='stock'>Stock: ${{p.availQuantity}}</p>
+  <button *ngIf="p.availQuantity>0" [ngClass]="['in-stock']">Add to
+    Cart</button>
+  <button *ngIf="p.availQuantity<=0" [ngClass]="['out-stock']">Out Of
+    Stock</button>
+
+</div>

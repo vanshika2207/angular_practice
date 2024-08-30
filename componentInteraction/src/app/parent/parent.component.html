@@ -1,0 +1,13 @@
+<h2>This is the parent component</h2>
+<p>{{shared}}</p>
+<app-child [p]="products" (greet)="greetingFromParent($event)"
+  (good)="goodMorningFromParent($event)"
+  (message)="messageFromParent($event)"
+  (clickc)="clickc($event)"
+  [animalList]="animals"
+  (animalEmit)="emitA($event)"
+  (demo)="demo($event)">
+
+</app-child>
+<p>Name is {{value.name}}</p>
+<p>Age is {{value.age}}</p>

@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+    <li><a [routerLink]="['/contactme']"
+        [queryParams]="{allowContact:true}"
+        fragment="loading"
+        routerLinkActive="active">Contactme</a></li>
+    <li><a [routerLink]="['/info']" routerLinkActive="active">Info Page</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

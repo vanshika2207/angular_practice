@@ -1,0 +1,7 @@
+<div *ngFor="let q of questionList;let i=index">
+  <p>Q{{i+1}}{{q.title}}</p>
+  <p>{{q.description}}</p>
+  <button (click)="emitQuestionId(q.id)">Edit</button>
+  <hr>
+
+</div>

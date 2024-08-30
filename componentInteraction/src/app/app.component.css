@@ -1,0 +1,13 @@
+.classA {
+  background-color: antiquewhite;
+}
+.classB {
+  font-weight: 900;
+  font-style: italic;
+  font-size: medium;
+}
+
+.active {
+  background-color: pink;
+  color: navy;
+}

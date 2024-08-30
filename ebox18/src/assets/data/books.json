@@ -1,0 +1,32 @@
+[
+    {"id": 1, 
+     "title": "Diary of a Wimpy Kid: Hard Luck ",
+     "author":"Jeff Kinney",
+     "description":"Diary of A Wimpy Kid: Hard Luck is the 8th edition of this beautifully scripted children-specific series. Greg Heffley is on an uninterrupted series of losing in life. Rowley Jefferson, who is his best pal, has dumped him for his new girlfriend, Abigail. Greg is now struggling to make new friends in mid-school. Rowley deems that Greg is jealous."
+    },
+    {"id": 2, 
+    "title": "Diary of a Wimpy Kid: Dog Days",
+    "author":"Jeff Kinney",
+    "description":"Diary of a Wimpy Kid: Dog Days is the super funny fourth in the highly-illustrated, bestselling and award-winning Diary of a Wimpy Kid series by Jeff Kinney. Perfect for both boys and girls of 8+, reluctant readers and all the millions of devoted Wimpy Kid fans out there. Dog Days is also a major motion picture and box office smash."
+    },
+    {"id": 3, 
+    "title": "Diary of a Wimpy Kid: The Third Wheel - Part 1",
+    "author":"Jeff Kinney",
+    "description":"The Third Wheel is the hilarious new book in the brilliant, bestselling and award-winning Diary of a Wimpy Kid series. Perfect for readers of 8+ and all the millions of Wimpy Kid fans. Also now a box office-busting major motion franchise with the third Wimpy Kid movie, Dog Days released in the UK in August 2012!"
+    },
+    {"id": 4, 
+     "title": "Dork Diaries: Birthday Drama - Part 1",
+     "author":"Rachel Renee Russell",
+     "description":"OMG! Nikkis birthday party is going to be beyond awesome! Her BFFs are planning a SUPERcool pool party, with a cake, a DJ, and the perfect invitations. Organizing a big party for one hundred people is easy, right? UMMM wrong!"
+    },
+    {"id": 5, 
+      "title": "Diary of a Wimpy Kid: The Third Wheel - Part 2",
+      "author":"Jeff Kinney",
+      "description":"The Third Wheel is the hilarious new book in the brilliant, bestselling and award-winning Diary of a Wimpy Kid series. Perfect for readers of 8+ and all the millions of Wimpy Kid fans. Also now a box office-busting major motion franchise with the third Wimpy Kid movie, Dog Days released in the UK in August 2012!"
+      },
+      {"id": 6, 
+       "title": "Dork Diaries: Birthday Drama - Part 2",
+       "author":"Rachel Renee Russell",
+       "description":"OMG! Nikkis birthday party is going to be beyond awesome! Her BFFs are planning a SUPERcool pool party, with a cake, a DJ, and the perfect invitations. Organizing a big party for one hundred people is easy, right? UMMM wrong!"
+      }
+  ]

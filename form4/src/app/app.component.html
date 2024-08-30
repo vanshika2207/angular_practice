@@ -1,0 +1,15 @@
+<form [formGroup]="myForm">
+  <label for="name">Name</label>
+  <input type="text" name="name" formControlName="name">
+  <div *ngIf="myForm.get('name').invalid && myForm.get('name').touched">
+    <app-control-message [control]="myForm.get('name')"></app-control-message>
+  </div>
+  <label for="feedback">Feedback</label>
+  <input type="text" name="feedback" formControlName="feedback">
+  <div *ngIf="myForm.get('feedback').invalid && myForm.get('feedback').touched">
+    <app-control-message
+      [control]="myForm.get('feedback')"></app-control-message>
+  </div>
+  <button (click)="onSubmit()">Submit</button>
+  <p *ngIf="submit">{{message}}</p>
+</form>

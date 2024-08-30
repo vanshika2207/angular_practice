@@ -1,0 +1,17 @@
+
+<body>
+  <h2>Question</h2>
+  <form class="signup-form">
+
+    <input type="text" id="title" name="title" placeholder="Title"
+      [(ngModel)]="title">
+    <br>
+    <br>
+    <input type="text" id="description" name="description"
+      placeholder="Description" [(ngModel)]="description">
+    <hr>
+    <button id="submit" (click)="addQuestion(title,description)">Add</button>
+  </form>
+  <app-question [questionList]="questions"
+    (id)="editQuestion($event)"></app-question>
+</body>

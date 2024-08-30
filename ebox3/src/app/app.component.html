@@ -1,0 +1,16 @@
+<h1>Scholarship Validation</h1>
+<div *ngFor="let s of Students">
+  <p>Name : {{s.name}}</p>
+  <p>Department : {{s.dept}}</p>
+  <p>Grade : {{s.grade}}</p>
+  <p>Annual Income : {{s.annualIncome}}</p>
+  <p *ngIf="s.grade>=8.5 && s.annualIncome<=300000;else notEligible"
+    [ngStyle]="{color:'green'}">
+    Eligible for Scholarship
+  </p>
+  <ng-template #notEligible>
+    <p [ngStyle]="{color:'red'}">Not Eligible for Scholarship</p>
+
+  </ng-template>
+
+</div>

@@ -1,0 +1,21 @@
+<link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+   rel="stylesheet" id="bootstrap-css">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap"
+   rel="stylesheet">
+<script
+   src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<body class="body">
+   <div class="card" *ngFor="let p of productselected;let i=index">
+      <p id="product-name-{{i+1}}">{{p.name}}</p>
+      <img [src]="p.imageUrl" alt id="image{{i+1}}" height="100px" width="100px"
+         (click)="showDescription(p.id)">
+      <div *ngIf="p.id==selected" id="description{{p.id}}">
+         <p>{{product.description}}</p>
+      </div>
+   </div>
+
+</body>

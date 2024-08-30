@@ -1,0 +1,33 @@
+<h1>Books Description</h1>
+<div *ngFor="let b of books">
+  <h3>{{b.title}}</h3>
+</div>
+<form [formGroup]="myForm" (ngSubmit)="post()">
+  <label for="author">Author:</label>
+  <input id="author" formControlName="author" type="text">
+
+  <label for="country">Country:</label>
+  <input id="country" formControlName="country" type="text">
+
+  <label for="imageLink">Image Link:</label>
+  <input id="imageLink" formControlName="imageLink" type="text">
+
+  <label for="language">Language:</label>
+  <input id="language" formControlName="language" type="text">
+
+  <label for="link">Link:</label>
+  <input id="link" formControlName="link" type="text">
+
+  <label for="pages">Pages:</label>
+  <input id="pages" formControlName="pages" type="number">
+
+  <label for="title">Title:</label>
+  <input id="title" formControlName="title" type="text">
+
+  <label for="year">Year:</label>
+  <input id="year" formControlName="year" type="number">
+
+  <button type="submit">Submit</button>
+</form>
+
+<button (click)="deleteBooks()">Delete</button>

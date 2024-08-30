@@ -1,0 +1,83 @@
+<h1>The Reactive form</h1>
+<br>
+<br>
+<form (ngSubmit)="onSubmit()" [formGroup]="myForm">
+  <div formGroupName="user">
+    <label for="name">Name</label>
+    <input type="text" name="name" formControlName="name">
+    <div
+      *ngIf="myForm.get('user.name').invalid && myForm.get('user.name').touched">
+      <p *ngIf="myForm.get('user.name').errors?.required">name is required</p>
+      <p *ngIf="myForm.get('user.name').errors?.minlength">name is should be
+        greater than 5 letters</p>
+    </div>
+    <br>
+    <label for="age">Age</label>
+    <input type="number" name="age" formControlName="age">
+    <div
+      *ngIf="myForm.get('user.age').invalid && (myForm.get('user.age').touched || myForm.get('user.age').dirty)">
+      <p *ngIf="myForm.get('user.age').errors?.required">Age is required</p>
+      <p
+        *ngIf="myForm.get('user.age').errors?.min || myForm.get('user.age').errors?.max">Age
+        should be between 20 and 60</p>
+      <p *ngIf="myForm.get('user.age').errors?.pattern">Invalid age pattern</p>
+    </div>
+  </div>
+  <br>
+  <label for="email">Email</label>
+  <input type="email" name="email" formControlName="email">
+  <div *ngIf="myForm.get('email').invalid && myForm.get('email').touched">
+    <p *ngIf="myForm.get('email').errors?.required">Email is required</p>
+    <p *ngIf="myForm.get('email').errors?.email">Invalid Email</p>
+  </div>
+  <br>
+  <label for="pets">Pets</label>
+  <select name="pets" formControlName="pets">
+    <option *ngFor='let p of pets' [value]="p">{{p}}</option>
+  </select>
+  <br>
+  <label for="mobile">Mobile Number</label>
+  <input type="tel" name="mobile" formControlName="mobile">
+  <div
+    *ngIf="myForm.get('mobile').invalid && (myForm.get('mobile').touched || myForm.get('mobile').dirty)">
+    <p *ngIf="myForm.get('mobile').errors?.required">Mobile number is
+      required</p>
+    <p *ngIf="myForm.get('mobile').errors?.pattern">Mobile number is invalid</p>
+  </div>
+  <br>
+  <label for="message">Message</label>
+  <textarea name="message" formControlName="message"></textarea>
+  <p>{{myForm.get('message').value}}</p>
+  <br>
+  <label>Gender</label>
+  <div *ngFor="let g of genders">
+    <input type="radio" name="gender" [value]="g" formControlName="gender">{{g}}
+  </div>
+  <br>
+  <div>
+    <label for="username">USERNAME</label>
+    <input type="text" name="username" formControlName="username">
+    <button type="button" (click)="suggest()">Suggest me a username</button>
+    <div *ngIf="myForm.get('username').errors?.nameisForbidden">Forbidden
+      name</div>
+  </div>
+  <br>
+  <div formArrayName="cooking">
+    <div *ngFor="let c of cookingControl.controls;let i=index">
+      <input type="text" [formControlName]="i">
+      <button type="button" (click)="removeCooking(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addCooking()">Add</button>
+
+  </div>
+  <br>
+  <div formArrayName="hobby">
+    <div *ngFor="let h of hobbyControl.controls; let i = index">
+      <input type="text" [formControlName]="i">
+      <button type="button" (click)="removeHobby(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addHobby()">Add Hobby</button>
+  </div>
+  <button [disabled]="!myForm.valid">Submit</button>
+</form>
+<p>{{myForm.get('user.name').value}}</p>
